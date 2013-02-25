@@ -1,0 +1,21 @@
+django
+South
+psycopg2
+Jinja2
+coffin  # makes Jinja2 easier
+pygments
+werkzeug
+dj-database-url
+django-social-auth
+
+
+### Other stuff, might use later.
+
+# celery
+# django-celery
+# sqlalchemy
+# Fabric
+# python-dateutil==1.5
+# git+http://github.com/django-extensions/django-extensions.git
+# httplib2
+# pytz
