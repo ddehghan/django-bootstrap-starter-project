@@ -51,5 +51,9 @@ heroku domains:add www.example.com
 
 heroku config
 
+python manage.py collectstatic --noinput;
+
+# disable static collection
+heroku config:add DISABLE_COLLECTSTATIC=1
 
 https://devcenter.heroku.com/articles/django
