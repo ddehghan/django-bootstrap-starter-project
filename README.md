@@ -1,5 +1,7 @@
 Base Project
 
+On command line run the following: { make sure to replace xxxx with the actual values you get from AWS website }
+
 heroku config:add S3_KEY=xxxx
 heroku config:add S3_SECRET=xxxx
 
