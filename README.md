@@ -2,12 +2,7 @@ Base Project
 
 On command line run the following: { make sure to replace xxxx with the actual values you get from AWS website }
 
-heroku config:add S3_KEY=xxxx
-heroku config:add S3_SECRET=xxxx
-
-export S3_KEY=xxxx
-export S3_SECRET=xxxx
-
+bash myproject/settings_local.sh
 
 ==Start up steps==
 
@@ -23,3 +18,13 @@ export S3_SECRET=xxxx
 heroku logs
 
 heroku ps
+
+heroku run python manage.py syncdb
+
+
+heroku domains:add www.example.com
+
+heroku config
+
+
+https://devcenter.heroku.com/articles/django

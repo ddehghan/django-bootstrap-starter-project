@@ -59,6 +59,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    'static',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -101,6 +102,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    'templates',
 )
 
 INSTALLED_APPS = (
@@ -112,8 +114,16 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+
+    # jinja2
+    'coffin',
+    # end jinja2
+
+    'website',
+
+    # Admin apps
+    'django.contrib.admin',
+    'social_auth',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -144,3 +154,46 @@ LOGGING = {
         },
     }
 }
+
+# BEGIN - Social Auth Settings
+
+AUTHENTICATION_BACKENDS = (
+    #    'social_auth.backends.twitter.TwitterBackend',
+    'social_auth.backends.facebook.FacebookBackend',
+    #    'social_auth.backends.google.GoogleOAuthBackend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
+    'social_auth.backends.google.GoogleBackend',
+    'social_auth.backends.yahoo.YahooBackend',
+    #    'social_auth.backends.browserid.BrowserIDBackend',
+    #    'social_auth.backends.contrib.linkedin.LinkedinBackend',
+    #    'social_auth.backends.contrib.livejournal.LiveJournalBackend',
+    #    'social_auth.backends.contrib.orkut.OrkutBackend',
+    #    'social_auth.backends.contrib.foursquare.FoursquareBackend',
+    #    'social_auth.backends.contrib.github.GithubBackend',
+    #    'social_auth.backends.contrib.vkontakte.VKontakteBackend',
+    #    'social_auth.backends.contrib.live.LiveBackend',
+    #    'social_auth.backends.contrib.skyrock.SkyrockBackend',
+    'social_auth.backends.contrib.yahoo.YahooOAuthBackend',
+    #    'social_auth.backends.OpenIDBackend',
+    'django.contrib.auth.backends.ModelBackend',        #Django default auth
+)
+
+# Redirects after login
+#LOGIN_URL = '/login-form/'
+LOGIN_REDIRECT_URL = '/private'
+#LOGIN_ERROR_URL = '/login-error/'
+#LOGOUT_URL= '/accounts/logout/'
+
+
+# used in django social Auth
+#TEMPLATE_CONTEXT_PROCESSORS = (
+#  'social_auth.context_processors.social_auth_by_name_backends',
+#  'social_auth.context_processors.social_auth_backends',
+#  'social_auth.context_processors.social_auth_by_type_backends',
+#  'social_auth.context_processors.social_auth_login_redirect',
+#  )
+
+SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
+SOCIAL_AUTH_UUID_LENGTH = 16
+
+# END - Social Auth Settings
