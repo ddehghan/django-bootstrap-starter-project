@@ -8,6 +8,12 @@ from coffin.shortcuts import get_object_or_404
 
 
 def home(request):
+    return direct_to_template(request, 'home.html', {
+        'a': 'a',
+    }, context_instance=RequestContext(request))
+
+
+def index(request):
     return direct_to_template(request, 'index.html', {
         'a': 'a',
     }, context_instance=RequestContext(request))
