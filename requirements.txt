@@ -9,6 +9,8 @@ dj-database-url
 django-social-auth
 
 
+gunicorn # Needed for heroku
+
 ### Other stuff, might use later.
 
 # celery
