@@ -2,7 +2,12 @@ Base Project
 
 On command line run the following: { make sure to replace xxxx with the actual values you get from AWS website }
 
-bash myproject/settings_local.sh
+bash myproject/settings_local.heroku.sh
+source myproject/settings_local.env.sh
+
+heroku config
+printenv
+
 
 ==Start up steps==
 
