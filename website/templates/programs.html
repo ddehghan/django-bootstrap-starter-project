@@ -1,7 +1,7 @@
 {% extends 'theme/base.html' %}
 
-{% block title %}Mission{% endblock %}
-{% block meta_description %}Mission{% endblock %}
+{% block title %}Programs{% endblock %}
+{% block meta_description %}Programs{% endblock %}
 
 
 {% block maincontent %}
@@ -17,8 +17,8 @@
 
     </div>
 
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row-fluid">
 
             <div class="span2 left">
 
@@ -29,21 +29,8 @@
                             id="tree-menu-home"><a href="/">Home</a></li>
                         <li id="tree-menu-mission"><a href="/mission/">Mission</a></li>
                         <li class="active" class="" id="tree-menu-programs"><a href="/programs/">Programs</a>
-                            {#                            <ul class="nav nav-list navlist-menu-level-1">#}
-                            {#                                <li class="first" id="tree-menu-programs-create"><a href="/programs/create/">Create</a>#}
-                            {#                                </li>#}
-                            {#                                <li class="" id="tree-menu-programs-deploy"><a href="/programs/deploy/">Deploying</a>#}
-                            {#                                </li>#}
-                            {#                                <li class="last" id="tree-menu-programs-scale-out"><a href="/programs/scale-out/">Scale#}
-                            {#                                    Out</a></li>#}
-                            {#                    </ul>#}
                         </li>
                         <li class="" id="tree-menu-drawings"><a href="/drawings/">Drawings</a>
-                            {#                            <ul class="nav nav-list navlist-menu-level-1">#}
-                            {#                                <li class="first" id="tree-menu-drawings-china"><a href="/drawings/china/">China</a>#}
-                            {#                                </li>#}
-                            {#                                <li class="last" id="tree-menu-drawings-india"><a href="/drawings/india/">India</a></li>#}
-                            {#                            </ul>#}
                         </li>
                         <li class="last" id="tree-menu-http:--blog.drawthefuture.org"><a
                                 href="http://blog.drawthefuture.org">Blog</a></li>
@@ -52,11 +39,25 @@
 
             </div>
 
-            <div class="span7 middle">
+            <div class="span10 right">
 
+                <div class="hero-unit">
+                    <div class="lead"><strong>Draw The Future Foundation</strong> works as a conduit to bring the best
+                        learning principals sourced from
+                        educators and thinkers around the world to children in emerging countries.
+                    </div>
+                </div>
 
-                <p>Draw The Future Foundation works as a conduit to bring the best learning principals sourced from
-                    educators and thinkers around the world to children in emerging countries. </p>
+                <h2>Why is this needed?</h2>
+
+                <p>Reading a book with a child without engaging him or her in conversation is great but what really
+                    helps them to develop literacy skills is engaging them in “dialogic reading”. Asking the kid what is
+                    going to happen next? Or why something happened? Engages the kids to reason and to develop
+                    vocabulary and communications skills in addition to the basic reading skills.</p>
+
+                <p>Draw the Future programs create “Structured learning opportunity” where in a playful setting the kids
+                    learn to reason, communicate and are encouraged to dream of something big to achieve.</p>
+                <br>
 
                 <h2>What we do?</h2>
                 <ul>
@@ -67,29 +68,23 @@
                     <li>Work with partner organization to deploy</li>
                     <li>Measure and monitor quality and accountability</li>
                 </ul>
-                <h2><span style="">Why is this needed?</span><span style=""> </span></h2>
 
-                <p>Reading a book with a child without engaging him or her in conversation is great but what really
-                    helps them to develop literacy skills is engaging them in “dialogic reading”. Asking the kid what is
-                    groining to happen next? Or why something happened? Engages the kids to reason and to develop
-                    vocabulary and communications skills in addition to the basic reading skills.</p>
-
-                <p>Draw the Future programs create “Structured learning opportunity” where in a playful setting the kids
-                    learn to reason, communicate and are encouraged to dream of something big to achieve.</p>
-
-                <p></p>
-
-                <h2>Our Classes:</h2>
-                <ol>
-                    <li>Drawing Basics</li>
-                    <li>Draw Your Future Job</li>
-                </ol>
-
-                <br>
+                <hr>
 
 
-                <p>There are lots of educational programs and materials that are effective in a western world settings however they would be impractical for use in a poor developing country school.</p>
-                <p>&lt;picture&gt;</p>
+                <h2>Testing in the filed</h2>
+
+                <p>There are lots of educational programs and materials that are effective in a western world settings
+                    however they would be impractical for use in a poor developing country school.</p>
+
+                {#                <div class="row-fluid">#}
+                {#                    <div class="span8 left">#}
+                <img src="{{ STATIC_URL }}home-assets/empty_classroom.jpg" class="img-polaroid">
+                {#                    </div>#}
+
+                {#                    <div class="span4 left">#}
+
+
                 <h3>Some of the barriers in these schools:</h3>
                 <ul>
                     <li>Under paid or non paid teachers</li>
@@ -97,26 +92,26 @@
                     <li>Sever lack of funds and books, note pads, color pencils, maps and any teaching aids</li>
                     <li>Lack of experimentation</li>
                 </ul>
-                <p> </p>
-                <h3>What is proven to make a difference in many studies such as the Perry Project, or Reggio Emilia curriculum?</h3>
+                {#                    </div>#}
+                {#                </div>#}
+
+                <h2>Evidence Based Programs</h2>
+                There are numerous scientifically proven early childhood educational programs that we study and take
+                copy elements from it to deploy in emerging markets.
+                The <a href="http://en.wikipedia.org/wiki/HighScope">Perry Preschool Project</a>, or <a
+                    href="http://en.wikipedia.org/wiki/Reggio_Emilia_approach">Reggio Emilia approach</a>
                 <ul>
                     <li>Having children in safe protected environment</li>
                     <li>Have very rich learning</li>
                     <li>They can explore and play</li>
-                    <li>With adults that are deeply invested in them who care about them and guide them and give them more data and evidence about the world</li>
+                    <li>With adults that are deeply invested in them who care about them and guide them and give them
+                        more data and evidence about the world
+                    </li>
                 </ul>
 
 
             </div>
 
-            <div class="span3 right">
-
-
-                <div class="panel">
-
-
-                </div>
-            </div>
 
         </div>
     </div>
