@@ -2,6 +2,14 @@
 import dj_database_url
 from settings_local import *
 
+# Full filesystem path to the project.
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# print PROJECT_ROOT
+
+APP_NAME = 'website'
+AWS_STORAGE_BUCKET_NAME = 'drawthefuture'
+
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -51,15 +59,20 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static_root")
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
+# print STATIC_ROOT
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+###added for s3 support
+STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+# STATIC_URL = '/static'
+
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    'static',
+    os.path.join(APP_NAME, 'static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -124,6 +137,7 @@ INSTALLED_APPS = (
     # Admin apps
     'django.contrib.admin',
     'social_auth',
+    'storages',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -197,3 +211,8 @@ SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
 SOCIAL_AUTH_UUID_LENGTH = 16
 
 # END - Social Auth Settings
+
+
+# Django storages to store files on S3
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
