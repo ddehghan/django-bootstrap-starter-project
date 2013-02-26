@@ -1,6 +1,4 @@
 # Django settings for myproject project.
-import dj_database_url
-from settings_local import *
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -10,6 +8,17 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': '',                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en//ref/settings/#allowed-hosts
@@ -59,7 +68,6 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    'static',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -74,7 +82,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = ')xlt&amp;wdewt=dv)gj2khd9f%bi&amp;rngxz6$lwky12&amp;b6norkuz38'
+SECRET_KEY = 'e!!qskok^h9v_!klh-dq1@przcl2jwvp1=751x5xjquscq6phm'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -102,7 +110,6 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    'templates',
 )
 
 INSTALLED_APPS = (
@@ -114,16 +121,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
-
-    # jinja2
-    'coffin',
-    # end jinja2
-
-    'website',
-
-    # Admin apps
-    'django.contrib.admin',
-    'social_auth',
+    # Uncomment the next line to enable admin documentation:
+    # 'django.contrib.admindocs',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -154,46 +153,3 @@ LOGGING = {
         },
     }
 }
-
-# BEGIN - Social Auth Settings
-
-AUTHENTICATION_BACKENDS = (
-    #    'social_auth.backends.twitter.TwitterBackend',
-    'social_auth.backends.facebook.FacebookBackend',
-    #    'social_auth.backends.google.GoogleOAuthBackend',
-    'social_auth.backends.google.GoogleOAuth2Backend',
-    'social_auth.backends.google.GoogleBackend',
-    'social_auth.backends.yahoo.YahooBackend',
-    #    'social_auth.backends.browserid.BrowserIDBackend',
-    #    'social_auth.backends.contrib.linkedin.LinkedinBackend',
-    #    'social_auth.backends.contrib.livejournal.LiveJournalBackend',
-    #    'social_auth.backends.contrib.orkut.OrkutBackend',
-    #    'social_auth.backends.contrib.foursquare.FoursquareBackend',
-    #    'social_auth.backends.contrib.github.GithubBackend',
-    #    'social_auth.backends.contrib.vkontakte.VKontakteBackend',
-    #    'social_auth.backends.contrib.live.LiveBackend',
-    #    'social_auth.backends.contrib.skyrock.SkyrockBackend',
-    'social_auth.backends.contrib.yahoo.YahooOAuthBackend',
-    #    'social_auth.backends.OpenIDBackend',
-    'django.contrib.auth.backends.ModelBackend',        #Django default auth
-)
-
-# Redirects after login
-#LOGIN_URL = '/login-form/'
-LOGIN_REDIRECT_URL = '/private'
-#LOGIN_ERROR_URL = '/login-error/'
-#LOGOUT_URL= '/accounts/logout/'
-
-
-# used in django social Auth
-#TEMPLATE_CONTEXT_PROCESSORS = (
-#  'social_auth.context_processors.social_auth_by_name_backends',
-#  'social_auth.context_processors.social_auth_backends',
-#  'social_auth.context_processors.social_auth_by_type_backends',
-#  'social_auth.context_processors.social_auth_login_redirect',
-#  )
-
-SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
-SOCIAL_AUTH_UUID_LENGTH = 16
-
-# END - Social Auth Settings
