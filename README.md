@@ -1,9 +1,29 @@
 Base Project
 
+=Sign up for AWS=
+
+==What you need to get started==
+
+FACEBOOK_APP_ID
+FACEBOOK_API_SECRET
+
+
+GOOGLE_OAUTH2_CLIENT_ID
+GOOGLE_OAUTH2_CLIENT_SECRET
+
+
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+
+
+
+
 On command line run the following: { make sure to replace xxxx with the actual values you get from AWS website }
 
 bash myproject/settings_local.heroku.sh
 source myproject/settings_local.env.sh
+
+==check settings==
 
 heroku config
 printenv
