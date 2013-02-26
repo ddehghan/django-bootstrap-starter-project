@@ -7,7 +7,12 @@ pygments
 werkzeug
 dj-database-url
 django-social-auth
+boto
+django-storages
 
+
+
+gunicorn # Needed for heroku
 
 ### Other stuff, might use later.
 
