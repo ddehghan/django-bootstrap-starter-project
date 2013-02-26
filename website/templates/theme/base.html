@@ -30,13 +30,22 @@
           href="{{ STATIC_URL }}theme/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}theme/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="{{ STATIC_URL }}theme/ico/favicon.png">
+
+    {% block extra_css %}
+    {% endblock %}
+
+
 </head>
 
 <body>
 
 {% include "theme/top_nav.html" %}
 
+
 <div class="container">
+
+    {% block hero %}
+    {% endblock %}
 
     {% block maincontent %}
     {% endblock %}
