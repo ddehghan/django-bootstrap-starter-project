@@ -1,5 +1,10 @@
 Base Project
 
+heroku config:add S3_KEY=xxxx
+heroku config:add S3_SECRET=xxxx
+
+export S3_KEY=xxxx
+export S3_SECRET=xxxx
 
 
 ==Start up steps==
