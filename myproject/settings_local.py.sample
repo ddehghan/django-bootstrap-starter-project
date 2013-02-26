@@ -11,7 +11,7 @@ DATABASES = {
     }
 }
 
-# OAuth keys
+# OAuth keys for Social Auth
 
 
 TWITTER_CONSUMER_KEY = ''
