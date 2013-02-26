@@ -87,7 +87,7 @@
 
 
 <script>
-    {% if not request.user.is_staff %}
+{#    {% if not request.user.is_staff %}#}
         var _gaq = _gaq || [['_trackPageview']];
         _gaq.unshift(['_setAccount', '11111111111']);
         (function(d, t) {
@@ -97,7 +97,7 @@
             g.src = '//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g, s);
         })(document, 'script');
-    {% endif %}
+{#    {% endif %}#}
 </script>
 
 {% block bottomscript %}
