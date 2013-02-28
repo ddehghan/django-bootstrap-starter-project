@@ -57,3 +57,6 @@ python manage.py collectstatic --noinput;
 heroku config:add DISABLE_COLLECTSTATIC=1
 
 https://devcenter.heroku.com/articles/django
+
+
+heroku pg:reset DATABASE
