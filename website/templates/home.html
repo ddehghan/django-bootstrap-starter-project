@@ -1,4 +1,6 @@
 {% extends 'theme/base.html' %}
+{% load widget_tweaks %}
+
 
 {% block meta_description %}
     We work with expert early childhood educators to create engaging high quality educational
@@ -291,112 +293,148 @@
 
     <div class="container marketing">
 
-    <!-- Three columns of text below the carousel -->
-    <div class="row">
-        <div class="span4">
-            <img class="img-rounded" src="{{ STATIC_URL }}home-assets/elephant.gif">
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="span4">
+                <img class="img-rounded" src="{{ STATIC_URL }}home-assets/elephant.gif">
 
-            <h2>Create</h2>
+                <h2>Create</h2>
 
-            <p>
-                We create engaging high quality educational programs that teach: innovation, creativity, and
-                communication.
+                <p>
+                    We create engaging high quality educational programs that teach: innovation, creativity, and
+                    communication.
+                </p>
+
+                <p>Our first programs are Drawing Basics, Draw Your Future Job</p>
+
+                {#            <p><a class="btn btn-success" href="/programs/create">Learn More</a></p>#}
+            </div>
+            <!-- /.span4 -->
+            <div class="span4">
+                <img class="img-circle" src="{{ STATIC_URL }}home-assets/testing.jpg">
+
+                <h2>Deploy & Test</h2>
+
+                <p>We test the lessons in the field in India, China, and Kenya for cultural appropriateness and
+                    effectiveness. We then solve the logistical problems and buying the materials locally or shipping
+                    them.
+                    We and create benchmarks to measure the effectiveness and prevent fraud and abuse. </p>
+
+                {#            <p><a class="btn btn-success" href="/programs/deploy">Learn More</a></p>#}
+            </div>
+            <!-- /.span4 -->
+            <div class="span4">
+                <img class="img-circle" src="{{ STATIC_URL }}home-assets/deploy.jpg">
+
+                <h2>Scale Out</h2>
+
+                <p>We take the program to the kids in multiple countries in the world. We partner with other NGOs and
+                    use
+                    their existing on the ground infrastructure to deploy the program and monitor the results.</p>
+
+                {#            <p><a class="btn btn-success" href="/programs/scale-out">Learn More</a></p>#}
+            </div>
+            <!-- /.span4 -->
+        </div>
+        <!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+        <hr class="featurette-divider">
+
+        <div class="featurette">
+            <img class="featurette-image img-rounded pull-right" src="{{ STATIC_URL }}home-assets/job-web.jpg">
+
+            <h2 class="featurette-heading">We help kids<br><span class="muted"> Dream of a better future</span></h2>
+
+            <p class="lead">
+                We help kids visualize themselves in a professional role. We empower them to think beyond the limits of
+                their current physical and economic status and see a brighter future.
+                <br>
+                We inspire kids to dream. And give them the tools to get closer to making that come to reality.
             </p>
-
-            <p>Our first programs are Drawing Basics, Draw Your Future Job</p>
-
-            {#            <p><a class="btn btn-success" href="/programs/create">Learn More</a></p>#}
         </div>
-        <!-- /.span4 -->
-        <div class="span4">
-            <img class="img-circle" src="{{ STATIC_URL }}home-assets/testing.jpg">
+        <div class="pull-right image-desciption-1">I want to become a doctor.</div>
+        <br>
 
-            <h2>Deploy & Test</h2>
+        <div class="pull-right image-desciption-2">11 year old girl, India.</div>
 
-            <p>We test the lessons in the field in India, China, and Kenya for cultural appropriateness and
-                effectiveness. We then solve the logistical problems and buying the materials locally or shipping them.
-                We and create benchmarks to measure the effectiveness and prevent fraud and abuse. </p>
+        <hr class="featurette-divider">
 
-            {#            <p><a class="btn btn-success" href="/programs/deploy">Learn More</a></p>#}
+        <div class="featurette">
+            <img class="featurette-image img-rounded pull-left" src="{{ STATIC_URL }}home-assets/logic-web.jpg">
+
+            <h2 class="featurette-heading">We help kids<span class="muted"> solve logical problems.</span>
+            </h2>
+
+            <p class="lead">
+                <br>
+                <b>How do you draw a two-story house?</b>
+                <br>
+                When a child is confronted and solves this logical problem he
+                or she will never forget this lesson.
+                <br>
+                Our program push the kids explore the boundaries of reasoning and perceive the world around them in in
+                detail.
+            </p>
         </div>
-        <!-- /.span4 -->
-        <div class="span4">
-            <img class="img-circle" src="{{ STATIC_URL }}home-assets/deploy.jpg">
+        <div class="pull-left image-desciption-1">My home (a two-story building)</div>
+        <br>
 
-            <h2>Scale Out</h2>
+        <div class="pull-left image-desciption-2">11 year old boy, India</div>
 
-            <p>We take the program to the kids in multiple countries in the world. We partner with other NGOs and use
-                their existing on the ground infrastructure to deploy the program and monitor the results.</p>
+        <hr class="featurette-divider">
 
-            {#            <p><a class="btn btn-success" href="/programs/scale-out">Learn More</a></p>#}
+        <div class="featurette">
+            <img class="featurette-image img-rounded pull-right"
+                 src="{{ STATIC_URL }}home-assets/china-future1-web.jpg">
+
+            <h2 class="featurette-heading">We help kids
+                <span class="muted"> invent the future</span></h2>
+
+            <p class="lead">We teach kids to create something new to solves a problem. We team them how to express
+                themselves and communicate their creation to other people. Story telling and selling your ideas is a
+                critical step along the path of becoming a successful professional. </p>
         </div>
-        <!-- /.span4 -->
-    </div><!-- /.row -->
+        <div class="pull-right">I think that computers of the future will be built into my shirt.</div>
+        <br>
+
+        <div class="pull-right">Drawn in 2008. 10 year old boy, China.</div>
+
+        <hr class="featurette-divider">
+
+
+        <!-- /END THE FEATURETTES -->
+
+        <div class="container">
+            <div class="row">
+
+                <div class="beta-invite">
+                    {% if show_invite %}
+
+                        If you like to join our free program please sign up below.<br>
+                        <br>
+
+                        <form class=".form-horizontal" action="/" method="post">{% csrf_token %}
+                            {#                            {{ formset.management_form }}#}
+                            {#                            {{ myform.email|safe }}#}
+                            {#                            {{ myform|safe }}#}
+{#                            {{ myform.email|bootstrap }}#}
+{#                            {{ myform.label_tag|add_class("css_class_1 css_class_2")|safe }}#}
+                            {{ myform.email|add_class("css_class_1 css_class_2")|safe }}
 
 
 
-    <!-- START THE FEATURETTES -->
-    <hr class="featurette-divider">
+                            <input class="btn btn-primary" type="submit" value="Submit"/>
+                        </form>
+                    {% else %}
+                        Thank you. We will contact you soon.
+                    {% endif %}
+                </div>
 
-    <div class="featurette">
-        <img class="featurette-image img-rounded pull-right" src="{{ STATIC_URL }}home-assets/job-web.jpg">
-
-        <h2 class="featurette-heading">We help kids<br><span class="muted"> Dream of a better future</span></h2>
-
-        <p class="lead">
-            We help kids visualize themselves in a professional role. We empower them to think beyond the limits of
-            their current physical and economic status and see a brighter future.
-            <br>
-            We inspire kids to dream. And give them the tools to get closer to making that come to reality.
-        </p>
+            </div>
+        </div>
     </div>
-    <div class="pull-right image-desciption-1">I want to become a doctor.</div>
-    <br>
-    <div class="pull-right image-desciption-2">11 year old girl, India.</div>
-
-    <hr class="featurette-divider">
-
-    <div class="featurette">
-        <img class="featurette-image img-rounded pull-left" src="{{ STATIC_URL }}home-assets/logic-web.jpg">
-
-        <h2 class="featurette-heading">We help kids<span class="muted"> solve logical problems.</span>
-        </h2>
-
-        <p class="lead">
-            <br>
-            <b>How do you draw a two-story house?</b>
-            <br>
-            When a child is confronted and solves this logical problem he
-            or she will never forget this lesson.
-            <br>
-            Our program push the kids explore the boundaries of reasoning and perceive the world around them in in
-            detail.
-        </p>
-    </div>
-    <div class="pull-left image-desciption-1">My home (a two-story building)</div>
-    <br>
-    <div class="pull-left image-desciption-2">11 year old boy, India</div>
-
-    <hr class="featurette-divider">
-
-    <div class="featurette">
-        <img class="featurette-image img-rounded pull-right" src="{{ STATIC_URL }}home-assets/china-future1-web.jpg">
-
-        <h2 class="featurette-heading">We help kids
-            <span class="muted"> invent the future</span></h2>
-
-        <p class="lead">We teach kids to create something new to solves a problem. We team them how to express
-            themselves and communicate their creation to other people. Story telling and selling your ideas is a
-            critical step along the path of becoming a successful professional. </p>
-    </div>
-    <div class="pull-right">I think that computers of the future will be built into my shirt.</div>
-    <br>
-    <div class="pull-right">Drawn in 2008. 10 year old boy, China.</div>
-
-    <hr class="featurette-divider">
-
-
-    <!-- /END THE FEATURETTES -->
 
 {% endblock %}
 

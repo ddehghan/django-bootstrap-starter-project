@@ -126,11 +126,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
 
     # jinja2
-    'coffin',
+    # 'coffin',
     # end jinja2
+    'widget_tweaks',
 
     'website',
 
