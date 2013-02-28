@@ -9,12 +9,6 @@ from coffin.shortcuts import get_object_or_404, render_to_response
 from website.models import LandingForm
 
 
-# def home(request):
-#     return direct_to_template(request, 'home.html', {
-#         'a': 'a',
-#     }, context_instance=RequestContext(request))
-
-
 def index(request):
     return render_to_response('index.html', {
         'a': 'a',

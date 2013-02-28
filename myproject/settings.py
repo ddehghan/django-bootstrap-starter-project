@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
 
+    'south',
     # jinja2
     # 'coffin',
     # end jinja2

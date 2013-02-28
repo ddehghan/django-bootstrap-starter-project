@@ -371,11 +371,11 @@
                 <br>
                 <b>How do you draw a two-story house?</b>
                 <br>
-                When a child is confronted and solves this logical problem he
-                or she will never forget this lesson.
+                When a child is confronted and solves these type of logical problems he
+                or she will never forget these lessons.
                 <br>
-                Our program push the kids explore the boundaries of reasoning and perceive the world around them in in
-                detail.
+                Our programs push the kids explore the boundaries of reasoning and perceive the world around them
+                in much richer detail.
             </p>
         </div>
         <div class="pull-left image-desciption-1">My home (a two-story building)</div>
@@ -406,7 +406,7 @@
 
         <!-- /END THE FEATURETTES -->
 
-        <div class="container">
+        <div id="signup-form" class="container">
             <div class="row">
 
                 <div class="beta-invite">
@@ -415,17 +415,26 @@
                         If you like to join our free program please sign up below.<br>
                         <br>
 
-                        <form class=".form-horizontal" action="/" method="post">{% csrf_token %}
-                            {#                            {{ formset.management_form }}#}
-                            {#                            {{ myform.email|safe }}#}
-                            {#                            {{ myform|safe }}#}
-{#                            {{ myform.email|bootstrap }}#}
-{#                            {{ myform.label_tag|add_class("css_class_1 css_class_2")|safe }}#}
-                            {{ myform.email|add_class("css_class_1 css_class_2")|safe }}
+                        <form class="form-horizontal" action="/#signup-form" method="post">{% csrf_token %}
 
+                            {% for field in myform %}
 
+                                <div class="control-group">
+                                    <label class="control-label" for="input{{ field.label }}">{{ field.label }}</label>
 
-                            <input class="btn btn-primary" type="submit" value="Submit"/>
+                                    <div class="controls">
+                                        {{ field|add_class("css_class_1 css_class_2")|safe }}
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input class="btn btn-primary" type="submit" value="Submit"/>
+                                </div>
+                            </div>
+
                         </form>
                     {% else %}
                         Thank you. We will contact you soon.
