@@ -15,13 +15,4 @@ django-widget-tweaks
 
 gunicorn # Needed for heroku
 
-### Other stuff, might use later.
 
-# celery
-# django-celery
-# sqlalchemy
-# Fabric
-# python-dateutil==1.5
-# git+http://github.com/django-extensions/django-extensions.git
-# httplib2
-# pytz
