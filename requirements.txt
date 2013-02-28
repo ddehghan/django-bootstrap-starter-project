@@ -1,4 +1,4 @@
-django
+django=1.5
 South
 psycopg2
 Jinja2
@@ -10,6 +10,7 @@ django-social-auth
 boto
 django-storages
 
+django-widget-tweaks
 
 
 gunicorn # Needed for heroku

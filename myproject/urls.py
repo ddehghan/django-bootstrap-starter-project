@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from django.views.generic.simple import direct_to_template
+from django.views.generic import TemplateView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -16,11 +16,11 @@ urlpatterns = patterns('',
                        url(r'^index$', 'website.views.index', name='index'),
                        url(r'^private$', 'website.views.private', name='private'),
 
-                       url("^mission", direct_to_template, {"template": "mission.html"}, name="mission"),
-                       url("^programs", direct_to_template, {"template": "programs.html"}, name="programs"),
-                       url("^drawings", direct_to_template, {"template": "drawings.html"}, name="drawings"),
+                       url("^mission", TemplateView.as_view(template_name='mission.html'), name="mission"),
+                       url("^programs", TemplateView.as_view(template_name='programs.html'), name="programs"),
+                       url("^drawings", TemplateView.as_view(template_name='drawings.html'), name="drawings"),
 
                        # Admin site
                        # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-                       # url(r'^admin/', include(admin.site.urls)),
+                       url(r'^admin/', include(admin.site.urls)),
                        )
