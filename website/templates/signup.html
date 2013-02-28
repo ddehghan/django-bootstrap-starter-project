@@ -406,33 +406,61 @@
 
         <!-- /END THE FEATURETTES -->
 
-        <div class="container marketing">
-            <div class="row span6 offset4">
-                <h1><span class="bold">Stay</span> in touch !</h1>
 
+        <div id="box" class="span6 offset3">
+            <h1><span class="bold">Stay</span> in touch</h1>
 
-                <div class="beta-invite">
-                    {% if show_invite %}
+            <h2>We lvoe it</h2>
 
-                        <h5>Subscribe to our newsletter:</h5>
+            <h3>Keep yourself updated by subscribing to our newsletter</h3>
 
-                        <form class="form-horizontal" action="/#signup-form" method="post">{% csrf_token %}
+            <div id="signup">
+                <form id="form" class="form-inline" novalidate="novalidate">{% csrf_token %}
+                    <input type="text" value="" name="email" class="input-xlarge email" id="email"
+                           placeholder="Your email address">
+                    <input type="submit" value="Subscribe" name="subscribe" class="btn btn-warning"><br>
+                    <small>* We won't spam you and you can unsubscribe at any point</small>
+                </form>
+            </div>
 
-                            {% for field in myform %}
-                                {# Template filters:   https://pypi.python.org/pypi/django-widget-tweaks#}
-                                {# {{ field|add_class("css_class_1 css_class_2")|safe }}#}
-                                {{ field|attr("placeholder=email ") |safe }}
-                                <input class="btn btn-warning" type="submit" value="Subscribe"/>
+            <div id="signup-form" class="container">
+                <div class="row">
 
-                            {% endfor %}
+                    <div class="beta-invite">
+                        {% if show_invite %}
 
-                        </form>
-                        <small>* No worries. We hate spam too.</small>
-                    {% else %}
-                        Thank you.
-                    {% endif %}
+                            If you like to join our free program please sign up below.<br>
+                            <br>
+
+                            <form class="form-horizontal" action="/#signup-form" method="post">{% csrf_token %}
+
+                                {% for field in myform %}
+
+                                    <div class="control-group">
+                                        <label class="control-label"
+                                               for="input{{ field.label }}">{{ field.label }}</label>
+
+                                        <div class="controls">
+                                            {{ field|add_class("css_class_1 css_class_2")|safe }}
+                                            <input class="btn btn-warning" type="submit" value="Subscribe"/>
+                                        </div>
+                                    </div>
+
+                                {% endfor %}
+
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input class="btn btn-warning" type="submit" value="Subscribe"/>
+                                    </div>
+                                </div>
+
+                            </form>
+                        {% else %}
+                            Thank you. We will contact you soon.
+                        {% endif %}
+                    </div>
+
                 </div>
-
             </div>
         </div>
 

@@ -20,7 +20,7 @@ class LandingPage(models.Model):
 class LandingForm(ModelForm):
     class Meta:
         model = LandingPage
-        fields = ('email', 'comment')
+        fields = ('email', )
 
         widgets = {
             'comment': Textarea(attrs={'cols': 80, 'rows': 10}),
