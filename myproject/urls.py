@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 
                        url(r'^$', 'website.views.home', name='home'),
                        url(r'^index$', 'website.views.index', name='index'),
+                       url(r'^contribute$', 'website.views.contribute', name='contribute'),
                        url(r'^private$', 'website.views.private', name='private'),
 
                        url("^mission", TemplateView.as_view(template_name='mission.html'), name="mission"),

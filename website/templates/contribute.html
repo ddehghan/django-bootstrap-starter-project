@@ -1,0 +1,92 @@
+{% extends 'theme/base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}Contribute{% endblock %}
+{% block meta_description %}Contribute{% endblock %}
+
+{% block extra_css %}
+    <style>
+        input[type=text], input[type=password], textarea {
+            width: 350px !important;
+        }
+
+    </style>
+{% endblock %}
+
+{% block maincontent %}
+
+    <div class="container">
+
+        <ul class="breadcrumb">
+            <li id="breadcrumb-menu-home"><a href="/">Home</a><span class="divider">/</span></li>
+            <li id="breadcrumb-menu-mission"
+                class="active">Contribute
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <h2>Help Us:</h2>
+
+            <p>We welcome you to connect with us and make a difference in the lives of children across the
+                world.</p>
+            <br>
+            <br>
+        </div>
+        <div class="row-fluid">
+
+            <div class="span6 left">
+                <img src="{{ STATIC_URL }}home-assets/mission1.jpg" class="img-polaroid">
+
+                <div class="image-desciption-3">Nampally Government High School, Hyderabad, India.</div>
+            </div>
+
+            <div class="span6">
+
+
+                {% if show_invite %}
+
+
+                    <form id="signup-form" class="form-horizontal" action="/contribute#signup-form" method="post">{% csrf_token %}
+
+                        {% for field in myform %}
+
+                            <div class="control-group">
+                                <label class="control-label"
+                                       for="input{{ field.label }}">{{ field.label }}</label>
+
+                                <div class="controls">
+                                    {{ field }}
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <input class="btn btn-warning" type="submit" value="Subscribe"/>
+                            </div>
+                        </div>
+
+                    </form>
+                {% else %}
+                    Thank you. We will contact you soon.
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block bottomscript %}
+    {#    <script src="/static/js/main.js"></script>#}
+{% endblock %}
