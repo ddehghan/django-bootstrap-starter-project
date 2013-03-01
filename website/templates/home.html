@@ -412,7 +412,7 @@
 
                 <div class="beta-invite">
                     {% if show_invite %}
-                        <a id="signup-form"></a>
+                        <a name="signup-form"></a>
                         <h5>Subscribe to our newsletter:</h5>
 
                         <form class="form-horizontal" action="/#signup-form" method="post">{% csrf_token %}
@@ -420,7 +420,7 @@
                             {% for field in myform %}
                                 {# Template filters:   https://pypi.python.org/pypi/django-widget-tweaks#}
                                 {# {{ field|add_class("css_class_1 css_class_2")|safe }}#}
-                                {{ field|attr:"placeholder=email " }}
+                                {% render_field field placeholder="your email" %}
                                 <input class="btn btn-warning" type="submit" value="Subscribe"/>
 
                             {% endfor %}
