@@ -45,6 +45,7 @@ heroku logs
 heroku ps
 
 heroku run python manage.py syncdb
+heroku run python manage.py migrate website
 
 
 heroku domains:add www.example.com
