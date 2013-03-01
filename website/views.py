@@ -4,7 +4,7 @@ from django.template import RequestContext
 from django.http import HttpResponse
 
 # from coffin.views.generic.simple import direct_to_template
-from coffin.shortcuts import get_object_or_404, render_to_response
+# from coffin.shortcuts import get_object_or_404, render_to_response
 
 from website.models import LandingForm
 

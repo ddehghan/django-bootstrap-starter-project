@@ -1,9 +1,9 @@
 django==1.5
 South
 psycopg2
-Jinja2
-coffin  # makes Jinja2 easier
-pygments
+#Jinja2
+#coffin  # makes Jinja2 easier
+#pygments
 werkzeug
 dj-database-url
 django-social-auth
