@@ -128,7 +128,6 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
 
-    'south',
     # jinja2
     # 'coffin',
     # end jinja2
@@ -140,6 +139,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'social_auth',
     'storages',
+    
+    'south',  # must be at the end of app list
 )
 
 # A sample logging configuration. The only tangible logging
