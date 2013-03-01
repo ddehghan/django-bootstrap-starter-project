@@ -1,10 +1,11 @@
-# Django settings for myproject project.
-import dj_database_url
-from settings_local import *
+#########
+# PATHS #
+#########
+
+import os
 
 # Full filesystem path to the project.
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# print PROJECT_ROOT
 
 APP_NAME = 'website'
 AWS_STORAGE_BUCKET_NAME = 'drawthefuture'
@@ -219,11 +220,26 @@ SOCIAL_AUTH_UUID_LENGTH = 16
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
-
+#############
+# DATABASES #
+#############
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
+DATABASES = {'default': dj_database_url.config(default='sqlite:/data.db')}
 
-DATABASES['default'] = dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
+##################
+# LOCAL SETTINGS #
+##################
+
+# Allow any settings to be defined in local_settings.py which should be
+# ignored in your version control system allowing for settings to be
+# defined per machine.
+try:
+    from local_settings import *
+except ImportError:
+    pass
