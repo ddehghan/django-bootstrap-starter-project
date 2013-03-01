@@ -2,9 +2,11 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponse
+from boto.ses.connection import SESConnection
 
 # from coffin.views.generic.simple import direct_to_template
 # from coffin.shortcuts import get_object_or_404, render_to_response
+from myproject.settings_local import AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
 
 from website.models import LandingForm
 
@@ -34,7 +36,7 @@ def home(request):
             landing_instance.save()
             show_invite = False
 
-            # send_email("PIKFOOD: Landing page ","email=" + request.POST["email"])
+            send_email("DRAW_THE_FUTURE: Newsletter signup", "email=" + request.POST["email"])
 
         else:
             return HttpResponse("error")
@@ -44,3 +46,11 @@ def home(request):
         "myform": myform,
         "show_invite": show_invite
     }, context_instance=RequestContext(request))
+
+
+def send_email(subject, body):
+    source = "ddehghan@gmail.com"
+    to_addresses = ["ddehghan@gmail.com"]
+    connection = SESConnection(aws_access_key_id=AWS_ACCESS_KEY_ID,
+                               aws_secret_access_key=AWS_SECRET_ACCESS_KEY)
+    connection.send_email(source, subject, body, to_addresses)
