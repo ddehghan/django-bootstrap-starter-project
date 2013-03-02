@@ -1,63 +1,74 @@
-Base Project
 
-=Sign up for AWS=
+Base Django Template Project
+============================
 
-==What you need to get started==
-
-FACEBOOK_APP_ID
-FACEBOOK_API_SECRET
-
-
-GOOGLE_OAUTH2_CLIENT_ID
-GOOGLE_OAUTH2_CLIENT_SECRET
+What is included?
+-----------------
+* Meant for deploying to Heroku
+* Social Auth. (Facebook, Google, Yahoo) Oauth
 
 
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
+What you need to get started?
+-----------------------------
+
+### Mininmum requirements
+
+* Sign up for AWS account
+* Get AWS keys AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
 
 
+### Advance requirements
 
-
-On command line run the following: { make sure to replace xxxx with the actual values you get from AWS website }
-
-bash myproject/settings_local.heroku.sh
-source myproject/settings_local.env.sh
-
-==check settings==
-
-heroku config
-printenv
-
-
-==Start up steps==
-
-1) git clone
-2) heroku create
-3) git push heroku master
+* Facebook Oauth keys: FACEBOOK_APP_ID, FACEBOOK_API_SECRET
+* Google OAuth keys: GOOGLE_OAUTH2_CLIENT_ID, GOOGLE_OAUTH2_CLIENT_SECRET
 
 
 
-== Trouble shooting ==
+Setup Steps
+===========
+* git clone
+* heroku create
+* git push heroku master
+* On command line run the following: { make sure to replace xxxx with the actual values you get from AWS website }
 
-=== View logs===
-heroku logs
+> bash myproject/settings_local.heroku.sh
 
-heroku ps
+> source myproject/settings_local.env.sh
 
-heroku run python manage.py syncdb
-heroku run python manage.py migrate website
+* Check settings
 
+> heroku config
 
-heroku domains:add www.example.com
-
-heroku config
-
-python manage.py collectstatic --noinput;
-
-# disable static collection
-heroku config:add DISABLE_COLLECTSTATIC=1
-
-https://devcenter.heroku.com/articles/django
+> printenv
 
 
-heroku pg:reset DATABASE
+
+Helpful Commands
+================
+
+
+
+### View logs and status
+> heroku logs
+
+> heroku ps
+
+> heroku config
+
+
+### Heroku 
+Deployment of Django on Heroku https://devcenter.heroku.com/articles/django
+
+> heroku run python manage.py syncdb
+
+> heroku run python manage.py migrate website
+
+
+> heroku domains:add www.example.com
+
+
+> python manage.py collectstatic --noinput;
+
+> heroku config:add DISABLE_COLLECTSTATIC=1         # To disable static collection
+
+> heroku pg:reset DATABASE
