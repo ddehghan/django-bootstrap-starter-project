@@ -10,6 +10,8 @@ django-social-auth
 boto
 django-storages
 
+python-dateutil
+
 django-widget-tweaks
 
 
