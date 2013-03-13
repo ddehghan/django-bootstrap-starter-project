@@ -72,3 +72,5 @@ Deployment of Django on Heroku https://devcenter.heroku.com/articles/django
 > heroku config:add DISABLE_COLLECTSTATIC=1         # To disable static collection
 
 > heroku pg:reset DATABASE
+
+> git push heroku drawthefuture:master
