@@ -70,6 +70,7 @@ Deployment of Django on Heroku https://devcenter.heroku.com/articles/django
 > python manage.py collectstatic --noinput;
 
 > heroku config:add DISABLE_COLLECTSTATIC=1         # To disable static collection
+> heroku config:remove DISABLE_COLLECTSTATIC
 
 > heroku pg:reset DATABASE
 
