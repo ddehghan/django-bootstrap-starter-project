@@ -34,11 +34,8 @@ Setup Steps
 * source myproject/settings_local.env.sh
 * sh myproject/settings_local.heroku.sh
 * git push heroku master
-* On command line run the following: { make sure to replace xxxx with the actual values you get from AWS website }
+* heroku run manage.py syncdb
 
-> bash myproject/settings_local.heroku.sh
-
-> source myproject/settings_local.env.sh
 
 * Check settings
 
