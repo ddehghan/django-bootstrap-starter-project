@@ -36,18 +36,18 @@ Setup Steps
 * git push heroku master
 * heroku run manage.py syncdb
 
+* Great Success! You are done.
+
+
+Helpful Commands
+================
+
 
 * Check settings
 
 > heroku config
 
 > printenv
-
-
-
-Helpful Commands
-================
-
 
 
 ### View logs and status
