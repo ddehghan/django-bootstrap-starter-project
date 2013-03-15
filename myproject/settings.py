@@ -1,3 +1,13 @@
+##################
+# LOCAL SETTINGS #
+##################
+
+# Allow any settings to be defined in local_settings.py which should be
+# ignored in your version control system allowing for settings to be
+# defined per machine.
+from myproject.settings_local import *
+
+
 #########
 # PATHS #
 #########
@@ -5,10 +15,12 @@
 import os
 
 # Full filesystem path to the project.
+from myproject.settings_local import AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID
+
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 APP_NAME = 'website'
-AWS_STORAGE_BUCKET_NAME = 'drawthefuture'
+AWS_STORAGE_BUCKET_NAME = 'django-bootstrap'
 
 
 DEBUG = True
@@ -67,8 +79,10 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, "static_root")
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 ###added for s3 support
-# STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
-STATIC_URL = '/static/'
+STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+
+if DEPLOY_ENV == 'dev':
+    STATIC_URL = '/static/'
 
 
 # Additional locations of static files
@@ -232,16 +246,3 @@ DATABASES = {'default': dj_database_url.config(default='sqlite:/data.db')}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-
-##################
-# LOCAL SETTINGS #
-##################
-
-# Allow any settings to be defined in local_settings.py which should be
-# ignored in your version control system allowing for settings to be
-# defined per machine.
-try:
-    from local_settings import *
-except ImportError:
-    pass

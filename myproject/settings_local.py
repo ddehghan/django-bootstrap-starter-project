@@ -34,6 +34,8 @@ GOOGLE_AX_EXTRA_DATA = [('oauth_token', 'oauth_token')]
 AWS_ACCESS_KEY_ID = os.environ['S3_KEY']
 AWS_SECRET_ACCESS_KEY = os.environ['S3_SECRET']
 
+DEPLOY_ENV = os.environ['DEPLOY_ENV']
+
 # email settings
 FROM_EMAIL = "xxxxxxx@gmail.com"
 TO_EMAIL = ["xxxxxxx@gmail.com"]

@@ -1,10 +1,11 @@
-
-Base Django Template Project
+Django Bootstrap Starter Project
 ============================
+This project makes it really easy to create a Django project and publish it to Heroku.
+
 
 What is included?
 -----------------
-* Meant for deploying to Heroku
+* Heroku settings
 * Social Auth. (Facebook, Google, Yahoo) Oauth
 
 
@@ -26,8 +27,12 @@ What you need to get started?
 
 Setup Steps
 ===========
+
 * git clone
 * heroku create
+* heroku rename <my_cool_project_name>
+* source myproject/settings_local.env.sh
+* sh myproject/settings_local.heroku.sh
 * git push heroku master
 * On command line run the following: { make sure to replace xxxx with the actual values you get from AWS website }
 
