@@ -74,3 +74,12 @@ Deployment of Django on Heroku https://devcenter.heroku.com/articles/django
 > heroku config:add DISABLE_COLLECTSTATIC=1         # To disable static collection
 
 > heroku pg:reset DATABASE
+
+
+How to get GoogleOauth key
+==========================
+
+* Got to https://code.google.com/apis/console
+* Go to API Access tab
+* Create new Client ID for web applications
+* add this urls http://localhost:8000/oauth2callback
