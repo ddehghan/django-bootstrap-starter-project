@@ -67,7 +67,7 @@ Deployment of Django on Heroku https://devcenter.heroku.com/articles/django
 > heroku domains:add www.example.com
 
 
-> python manage.py collectstatic --noinput;
+> export DEPLOY_ENV=prod; python manage.py collectstatic --noinput; export DEPLOY_ENV=dev
 
 > heroku config:add DISABLE_COLLECTSTATIC=1         # To disable static collection
 > heroku config:remove DISABLE_COLLECTSTATIC

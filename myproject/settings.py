@@ -18,7 +18,7 @@ import os
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 APP_NAME = 'website'
-AWS_STORAGE_BUCKET_NAME = 'drawthefuture'
+AWS_STORAGE_BUCKET_NAME = 'drawthefuture-static'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
