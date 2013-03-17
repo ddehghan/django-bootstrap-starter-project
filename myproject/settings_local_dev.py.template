@@ -45,5 +45,4 @@ AWS_SECRET_ACCESS_KEY = 'xxxxxxxxxx'
 FROM_EMAIL = "xxxxxxx@gmail.com"
 TO_EMAIL = ["xxxxxxx@gmail.com"]
 
-#Enviroment Type
-DEPLOY_ENV = 'dev'    # dev or prod
+
