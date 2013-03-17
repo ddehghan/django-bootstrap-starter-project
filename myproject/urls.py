@@ -13,8 +13,8 @@ urlpatterns = patterns('',
                        (r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
 
                        url(r'^$', 'website.views.index', name='index'),
-                       url(r'^login_test', 'website.views.login_test', name='login_test'),
-                       url(r'^private$', 'website.views.private', name='private'),
+                       url(r'^login', 'website.views.login_test', name='login_test'),
+                       url(r'^private', 'website.views.private', name='private'),
 
                        # url("^index", TemplateView.as_view(template_name='index.html'), name="mission"),
 
