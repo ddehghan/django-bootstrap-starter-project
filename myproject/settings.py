@@ -22,12 +22,11 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APP_NAME = 'website'
 AWS_STORAGE_BUCKET_NAME = 'django-bootstrap'
 
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+# ('Your Name', 'your_email@example.com'),
 )
 
 MANAGERS = ADMINS
@@ -72,22 +71,23 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, "static_root")
-#STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
-# print STATIC_ROOT
+# STATIC_ROOT = os.path.join(PROJECT_ROOT, "static_root")
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'website', 'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 ###added for s3 support
-STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 
 if DEPLOY_ENV == 'dev':
     STATIC_URL = '/static/'
 
+elif DEPLOY_ENV == 'prod':
+    STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(APP_NAME, 'static'),
+    # os.path.join(APP_NAME, 'static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -233,7 +233,7 @@ SOCIAL_AUTH_UUID_LENGTH = 16
 
 
 # Django storages to store files on S3
-if DEPLOY_ENV != 'dev':
+if DEPLOY_ENV == 'prod':
     STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
@@ -242,6 +242,7 @@ if DEPLOY_ENV != 'dev':
 #############
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
+
 DATABASES = {'default': dj_database_url.config(default='sqlite:/data.db')}
 
 
