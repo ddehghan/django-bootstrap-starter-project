@@ -1,3 +1,4 @@
+import os
 from boto.ses.connection import SESConnection
 
 DEPLOY_ENV = os.environ['DEPLOY_ENV']
