@@ -35,3 +35,6 @@ AWS_SECRET_ACCESS_KEY = os.environ['S3_SECRET']
 # email settings
 FROM_EMAIL = "xxxxxxx@gmail.com"
 TO_EMAIL = ["xxxxxxx@gmail.com"]
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = os.environ['SECRET_KEY']

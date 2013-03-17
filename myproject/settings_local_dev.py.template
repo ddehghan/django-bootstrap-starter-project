@@ -46,3 +46,6 @@ FROM_EMAIL = "xxxxxxx@gmail.com"
 TO_EMAIL = ["xxxxxxx@gmail.com"]
 
 
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
