@@ -3,3 +3,5 @@
 
 /settings_local.env.sh.mine
 /settings_local.heroku.sh.mine
+/settings_local.dev.py
+/secrets.heroku.sh
