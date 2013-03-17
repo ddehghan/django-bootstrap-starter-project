@@ -1,7 +1,2 @@
-/settings_local.env.sh
-/settings_local.heroku.sh
-
-/settings_local.env.sh.mine
-/settings_local.heroku.sh.mine
-/settings_local.dev.py
+/settings_local_dev.py
 /secrets.heroku.sh

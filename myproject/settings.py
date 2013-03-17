@@ -1,3 +1,5 @@
+import os
+
 ##################
 # LOCAL SETTINGS #
 ##################
@@ -5,17 +7,22 @@
 # Allow any settings to be defined in local_settings.py which should be
 # ignored in your version control system allowing for settings to be
 # defined per machine.
-from myproject.settings_local import *
+
+DEPLOY_ENV = os.environ['DEPLOY_ENV']
+
+if DEPLOY_ENV == 'dev':
+    from myproject.settings_local_dev import *
+
+elif DEPLOY_ENV == 'prod':
+    from myproject.settings_local_prod import *
 
 
 #########
 # PATHS #
 #########
 
-import os
-
 # Full filesystem path to the project.
-from myproject.settings_local import AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID
+# from myproject.settings_local import AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -87,10 +94,10 @@ elif DEPLOY_ENV == 'prod':
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    # os.path.join(APP_NAME, 'static'),
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+# os.path.join(APP_NAME, 'static'),
+# Put strings here, like "/home/html/static" or "C:/www/django/static".
+# Always use forward slashes, even on Windows.
+# Don't forget to use absolute paths, not relative paths.
 )
 
 # List of finder classes that know how to find static files in

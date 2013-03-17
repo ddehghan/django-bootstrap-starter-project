@@ -1,20 +1,27 @@
-# Local settings
+#  _____                      _      _____                          _ _
+# |  __ \                    | |    / ____|                        (_) |
+# | |  | | ___    _ __   ___ | |_  | |     ___  _ __ ___  _ __ ___  _| |_
+# | |  | |/ _ \  | '_ \ / _ \| __| | |    / _ \| '_ ` _ \| '_ ` _ \| | __|
+# | |__| | (_) | | | | | (_) | |_  | |___| (_) | | | | | | | | | | | | |_
+# |_____/ \___/  |_| |_|\___/ \__|  \_____\___/|_| |_| |_|_| |_| |_|_|\__|
+#
+#
+
 import os
 
 # OAuth keys for Social Auth
-
 TWITTER_CONSUMER_KEY = ''
 TWITTER_CONSUMER_SECRET = ''
-FACEBOOK_APP_ID = os.environ['FACEBOOK_APP_ID']
-FACEBOOK_API_SECRET = os.environ['FACEBOOK_API_SECRET']
+FACEBOOK_APP_ID = 'xxxxxxxxxx'
+FACEBOOK_API_SECRET = 'xxxxxxxxxx'
 LINKEDIN_CONSUMER_KEY = ''
 LINKEDIN_CONSUMER_SECRET = ''
 ORKUT_CONSUMER_KEY = ''
 ORKUT_CONSUMER_SECRET = ''
 GOOGLE_CONSUMER_KEY = ''
 GOOGLE_CONSUMER_SECRET = ''
-GOOGLE_OAUTH2_CLIENT_ID = os.environ['GOOGLE_OAUTH2_CLIENT_ID']
-GOOGLE_OAUTH2_CLIENT_SECRET = os.environ['GOOGLE_OAUTH2_CLIENT_SECRET']
+GOOGLE_OAUTH2_CLIENT_ID = 'xxxxxxxxxx'
+GOOGLE_OAUTH2_CLIENT_SECRET = 'xxxxxxxxxx'
 FOURSQUARE_CONSUMER_KEY = ''
 FOURSQUARE_CONSUMER_SECRET = ''
 VK_APP_ID = ''
@@ -31,11 +38,12 @@ GOOGLE_EXTRA_DATA = [('oauth_token', 'oauth_token')]
 GOOGLE_SREG_EXTRA_DATA = [('oauth_token', 'oauth_token')]
 GOOGLE_AX_EXTRA_DATA = [('oauth_token', 'oauth_token')]
 
-AWS_ACCESS_KEY_ID = os.environ['S3_KEY']
-AWS_SECRET_ACCESS_KEY = os.environ['S3_SECRET']
-
-DEPLOY_ENV = os.environ['DEPLOY_ENV']
+AWS_ACCESS_KEY_ID = 'xxxxxxxxxx'
+AWS_SECRET_ACCESS_KEY = 'xxxxxxxxxx'
 
 # email settings
 FROM_EMAIL = "xxxxxxx@gmail.com"
 TO_EMAIL = ["xxxxxxx@gmail.com"]
+
+#Enviroment Type
+DEPLOY_ENV = 'dev'    # dev or prod
