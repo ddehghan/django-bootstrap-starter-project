@@ -22,8 +22,6 @@ elif DEPLOY_ENV == 'prod':
 #########
 
 # Full filesystem path to the project.
-# from myproject.settings_local import AWS_SECRET_ACCESS_KEY, AWS_ACCESS_KEY_ID
-
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 APP_NAME = 'website'
@@ -46,7 +44,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Vancouver'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -109,7 +107,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'e!!qskok^h9v_!klh-dq1@przcl2jwvp1=751x5xjquscq6phm'
+SECRET_KEY = 'e!!qskok^h9v_!klh-dq1@przcl2jwvp1=751x5xjquscq6phn'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -255,3 +253,5 @@ DATABASES = {'default': dj_database_url.config(default='sqlite:/data.db')}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+print SECRET_KEY
