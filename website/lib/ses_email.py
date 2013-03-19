@@ -1,5 +1,6 @@
 import os
 from boto.ses.connection import SESConnection
+from myproject.settings import FROM_EMAIL, TO_EMAIL
 
 DEPLOY_ENV = os.environ['DEPLOY_ENV']
 
