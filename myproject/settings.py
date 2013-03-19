@@ -1,3 +1,5 @@
+import os
+
 ##################
 # LOCAL SETTINGS #
 ##################
@@ -5,14 +7,19 @@
 # Allow any settings to be defined in local_settings.py which should be
 # ignored in your version control system allowing for settings to be
 # defined per machine.
-from myproject.settings_local import *
+
+DEPLOY_ENV = os.environ['DEPLOY_ENV']
+
+if DEPLOY_ENV == 'dev':
+    from myproject.settings_local_dev import *
+
+elif DEPLOY_ENV == 'prod':
+    from myproject.settings_local_prod import *
 
 
 #########
 # PATHS #
 #########
-
-import os
 
 # Full filesystem path to the project.
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,7 +44,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Vancouver'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -76,15 +83,16 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, "static_root")
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 ###added for s3 support
-STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 
 if DEPLOY_ENV == 'dev':
     STATIC_URL = '/static/'
 
+elif DEPLOY_ENV == 'prod':
+    STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    os.path.join(APP_NAME, 'static'),
+# os.path.join(APP_NAME, 'static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -98,8 +106,6 @@ STATICFILES_FINDERS = (
     #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'e!!qskok^h9v_!klh-dq1@przcl2jwvp1=751x5xjquscq6phm'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -230,8 +236,9 @@ SOCIAL_AUTH_UUID_LENGTH = 16
 
 
 # Django storages to store files on S3
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+if DEPLOY_ENV == 'prod':
+    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 #############
 # DATABASES #
@@ -245,3 +252,6 @@ DATABASES = {'default': dj_database_url.config(default='sqlite:/data.db')}
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+
+#This is to extend the user profile to add custom fields
+AUTH_PROFILE_MODULE = 'users.UserProfile'
