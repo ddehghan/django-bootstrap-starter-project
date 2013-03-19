@@ -32,9 +32,5 @@ GOOGLE_AX_EXTRA_DATA = [('oauth_token', 'oauth_token')]
 AWS_ACCESS_KEY_ID = os.environ['S3_KEY']
 AWS_SECRET_ACCESS_KEY = os.environ['S3_SECRET']
 
-# email settings
-FROM_EMAIL = "xxxxxxx@gmail.com"
-TO_EMAIL = ["xxxxxxx@gmail.com"]
-
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = os.environ['SECRET_KEY']

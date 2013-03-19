@@ -255,3 +255,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 #This is to extend the user profile to add custom fields
 AUTH_PROFILE_MODULE = 'users.UserProfile'
+
+# email settings
+FROM_EMAIL = "ddehghan@gmail.com"
+TO_EMAIL = ["ddehghan@gmail.com"]
