@@ -89,7 +89,6 @@ if DEPLOY_ENV == 'dev':
 elif DEPLOY_ENV == 'prod':
     STATIC_URL = 'http://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
 
-
 # Additional locations of static files
 STATICFILES_DIRS = (
 # os.path.join(APP_NAME, 'static'),

@@ -1,9 +1,9 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
-
-from django.contrib import admin
 from myproject import settings
 
+# Uncomment the next two lines to enable the admin:
+from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
