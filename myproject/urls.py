@@ -2,15 +2,12 @@ from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
 from myproject import settings
 
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-                       # Examples:
-                       # url(r'^$', 'myproject.views.home', name='home'),
-                       url(r'', include('social_auth.urls')),
-                       (r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
+
+                       url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
 
                        url(r'^$', 'website.views.index', name='index'),
                        url(r'^login', 'website.views.login_test', name='login_test'),
@@ -25,4 +22,8 @@ urlpatterns = patterns('',
                        # Server Static Files from Django
                        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
                            {'document_root': settings.STATIC_ROOT, 'show_indexes': True}),
-                       )
+
+                       # Social Auth:
+                       url(r'', include('social_auth.urls')),
+
+)
