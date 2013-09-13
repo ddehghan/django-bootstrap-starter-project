@@ -1,3 +1,10 @@
+Note
+=====
+This repo is not deprecated. 
+Please see the newer version: https://github.com/ddehghan/django-bootstrap-starter-project2
+
+
+
 Django Bootstrap Starter Project
 ============================
 This project makes it really easy to create a Django project and publish it to Heroku.
